@@ -31,14 +31,14 @@ app.post("/weather", function(req, res) {
       const temp = weatherData.main.temp;
       const feelsLike = weatherData.main.feels_like;
       const description = weatherData.weather[0].description;
-      const icon = weatherData.weather[0].icon;
-      const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+      // const icon = weatherData.weather[0].icon;
+      // const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
 
       res.render("weather", {
         weatherDescription: description,
         query: query,
         temperature: temp,
-        imgURL: imageURL
+        // imgURL: imageURL
       });
       // res.write("<p>The weather is currently " + description + ".</p>");
       // res.write("<h1>The temperature in "+ query +"is " + temp + " degree Celcius.</h1>");
@@ -50,11 +50,6 @@ app.post("/weather", function(req, res) {
 
 });
 
-let port = process.env.Port;
-if(port == null || port ==""){
-  port = 3000;
-}
-
-app.listen(port, function() {
+app.listen(process.env.Port|| 3000, function() {
   console.log("Server is runnning on port 3000");
 });

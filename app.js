@@ -50,6 +50,11 @@ app.post("/weather", function(req, res) {
 
 });
 
-app.listen(process.env.Port|| 3000, function() {
+let port = process.env.Port;
+if(port == null || port ==""){
+  port = 3000;
+}
+
+app.listen(port, function() {
   console.log("Server is runnning on port 3000");
 });

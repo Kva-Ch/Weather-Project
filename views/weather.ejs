@@ -1,9 +1,15 @@
 <%- include('partials/header') %>
 
-<div class="">
+<div class="weatherbox">
   <p>
+    <h1 class="weatherdata"> <%= query %> </h1>
     <h1>The weather is currently <%= weatherDescription %></h1>
-    <h1>The temperature in <%= query %> is  <%= temperature %> degree Celcius. </h1>
+    <h1>Temperature: <%= temperature %> degree Celcius. </h1>
+    <h1>Feels like : <%= feelsLike %> degree Celcius. </h1>
+    <h1>Pressure : <%= pressure %> hpa. </h1>
+    <h1>Visibility : <%= visibility %> km. </h1>
+    <h1>Humidity : <%= humidity %> %. </h1>
+    <img src="<%= imgURL %>" alt="">
   </p>
 </div>
 

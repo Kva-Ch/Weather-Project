@@ -29,7 +29,6 @@ app.post("/weather", function(req, res) {
     response.on("data", function(data) {
       const weatherData = JSON.parse(data);
       if(statusCode!=404){
-        console.log(weatherData);
         const temp = weatherData.main.temp;
         const feelsLike = weatherData.main.feels_like;
         const description = weatherData.weather[0].description;
